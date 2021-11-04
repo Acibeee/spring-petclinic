@@ -35,6 +35,7 @@ docker ps | grep registry
 if [ $? -ne 0 ]
 then
 	docker run -d -p 5000:5000 --name registry registry:2
+	docker build -t localhost:5000/petclinic .
 fi
 
 #Running application stack
