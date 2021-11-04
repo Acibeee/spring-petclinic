@@ -4,6 +4,8 @@
 
 FROM		openjdk:17-jdk-alpine
 
+RUN		mkdir /var/log
+
 ENV		MYSQL_USER=petclinic \
 		MYSQL_PASS=petclinic \
 		MYSQL_URL=jdbc:mysql://database/petclinic \
