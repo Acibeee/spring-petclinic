@@ -76,4 +76,11 @@ class VetController {
 		return vets;
 	}
 
+	@GetMapping({ "/vetsError" })
+	public @ResponseBody Vets showResourcesVetList1() throws Exception {
+		// Here we are returning an object of type 'Vets' rather than a collection of Vet
+		// objects so it is simpler for JSon/Object mapping
+		throw new Exception();
+	}
+
 }
