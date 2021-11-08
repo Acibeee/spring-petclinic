@@ -27,15 +27,17 @@ services:
     restart: unless-stopped
   
   frontend:
-    image: localhost:5000/petclinic
+    build: .
     container_name: frontend
     environment:
       - DATABASE=mysql
       - "JAVA_OPTS=-Xms64M -Xmx512M"
+    labels:
+        com.datadoghq.ad.logs: '[{"type":"file", "source":"app", "service":"java", "path":"/var/lib/docker/containers/app.log"}]'
     volumes:
       - type: bind
-        source: "./logs"
-        target: "/var/logs"
+        source: "./logs/"
+        target: "/var/log/"
     ports: 
       - "8080:8080"
     depends_on:
