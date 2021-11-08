@@ -26,6 +26,8 @@ services:
     environment:
       - DATABASE=mysql
       - "JAVA_OPTS=-Xms64M -Xmx512M"
+    labels:
+        com.datadoghq.ad.logs: '[{"type":"file", "source": "java", "service": "app", "path": "/var/lib/docker/containers/app.log"}]'
     volumes:
       - type: bind
         source: "./logs"
