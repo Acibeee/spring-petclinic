@@ -1,0 +1,9 @@
+logs:
+  - type: file
+    path: /var/lib/docker/containers/app.log
+    service: petclinic
+    source: java
+    log_processing_rules:
+      - type: multi_line
+        name: multi_line_rule
+        pattern: \\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])

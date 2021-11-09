@@ -17,4 +17,5 @@ services:
       - "/opt/datadog-agent/run:/opt/datadog-agent/run:rw"
       - "/sys/fs/cgroup/:/host/sys/fs/cgroup:ro"
       - "./logs:/var/lib/docker/containers"
+      - "./app.d/:/etc/datadog-agent/conf.d/app.d:ro"
     restart: unless-stopped
