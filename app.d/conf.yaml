@@ -2,6 +2,8 @@ logs:
   - type: file
     path: /var/lib/docker/containers/app.log
     service: java
+    source: env 
+    sourcecategory: dev
     source: petclinic
     log_processing_rules:
       - type: multi_line
