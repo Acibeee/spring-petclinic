@@ -1,8 +1,8 @@
 logs:
   - type: file
     path: /var/lib/docker/containers/app.log
-    service: petclinic
-    source: java
+    service: java
+    source: petclinic
     log_processing_rules:
       - type: multi_line
         name: multi_line_rule
